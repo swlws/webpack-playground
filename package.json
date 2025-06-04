@@ -6,6 +6,7 @@
   "type": "module",
   "private": true,
   "scripts": {
+    "use_env": "webpack --env MODE=prod --env USE_ANALYZER",
     "build": "webpack --config webpack.config.js",
     "watch": "webpack --watch --config webpack.config.js",
     "start": "webpack serve --config webpack.config.js --open",
