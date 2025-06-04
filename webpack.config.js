@@ -89,6 +89,7 @@ module.exports = (env) => {
     ],
     devServer: {
       static: './dist',
+      hot: true,
     },
     optimization: {
       runtimeChunk: 'single',
