@@ -1,19 +1,9 @@
-// import path from 'path';
-// import HtmlWebpackPlugin from 'html-webpack-plugin';
-// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-// import toml from 'toml';
-// import yaml from 'yamljs';
-// import json5 from 'json5';
-
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const toml = require('toml');
 const yaml = require('yamljs');
 const json5 = require('json5');
-
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = dirname(__filename);
 
 module.exports = (env) => {
   console.log(`webpack env:`);
@@ -83,6 +73,12 @@ module.exports = (env) => {
             parse: json5.parse,
           },
         },
+        // babel-loader
+        // {
+        //   test: /\.js$/,
+        //   include: path.resolve(__dirname, 'src'),
+        //   loader: 'babel-loader',
+        // },
       ],
     },
     plugins: [
@@ -96,6 +92,8 @@ module.exports = (env) => {
     },
     optimization: {
       runtimeChunk: 'single',
+      // https://webpack.docschina.org/guides/build-performance/#minimal-entry-chunk
+      // runtimeChunk: true,
       splitChunks: {
         chunks: 'all',
         cacheGroups: {

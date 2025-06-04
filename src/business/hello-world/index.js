@@ -18,9 +18,7 @@ function loadImg() {
 
 function getComponent() {
   // lodash 现在使用 import 引入
-  return import(
-    /* webpackChunkName: 'lodash', webpackPreload: true, webpackPrefetch: true */ 'lodash'
-  )
+  return import(/* webpackChunkName: 'lodash' */ 'lodash')
     .then(({ default: _ }) => {
       const element = document.createElement('div');
       element.classList.add('hello');
