@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "webpack playground",
   "main": "index.js",
-  "type": "module",
   "private": true,
   "scripts": {
     "use_env": "webpack --env MODE=prod --env USE_ANALYZER",

@@ -1,15 +1,21 @@
-import path, { dirname } from 'path';
-import { fileURLToPath } from 'url';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
-import toml from 'toml';
-import yaml from 'yamljs';
-import json5 from 'json5';
+// import path from 'path';
+// import HtmlWebpackPlugin from 'html-webpack-plugin';
+// import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+// import toml from 'toml';
+// import yaml from 'yamljs';
+// import json5 from 'json5';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const toml = require('toml');
+const yaml = require('yamljs');
+const json5 = require('json5');
 
-export default (env) => {
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = dirname(__filename);
+
+module.exports = (env) => {
   console.log(`webpack env:`);
   console.log(JSON.stringify(env, null, 2));
   console.log('================\n');
