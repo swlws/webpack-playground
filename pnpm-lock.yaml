@@ -40,6 +40,9 @@ devDependencies:
   webpack-dev-server:
     specifier: ^5.2.1
     version: 5.2.1(webpack-cli@6.0.1)(webpack@5.99.9)
+  webpack-merge:
+    specifier: ^6.0.1
+    version: 6.0.1
   yamljs:
     specifier: ^0.3.0
     version: 0.3.0
