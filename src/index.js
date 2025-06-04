@@ -1,12 +1,10 @@
-import _ from 'lodash';
+import { helloWorld } from './business/hello-world/index.js';
+import { logCsvData } from './business/load-csv/index.js';
 
-function component() {
-  const element = document.createElement('div');
+main();
 
-  // 执行这一行需要引入 lodash（目前通过 script 脚本引入）
-  element.innerHTML = _.join(['Hello', 'webpack'], ' ');
+function main() {
+  helloWorld();
 
-  return element;
+  logCsvData();
 }
-
-document.body.appendChild(component());
