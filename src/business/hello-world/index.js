@@ -23,7 +23,7 @@ function getComponent() {
       const element = document.createElement('div');
       element.classList.add('hello');
 
-      element.innerHTML = _.join(['1Hello', 'webpack', '777'], ' ');
+      element.innerHTML = _.join(['1Hello', 'webpack', '9999999999999'], ' ');
 
       return element;
     })

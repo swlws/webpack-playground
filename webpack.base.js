@@ -86,10 +86,6 @@ module.exports = (env) => {
       }),
       // new BundleAnalyzerPlugin(),
     ],
-    devServer: {
-      static: './dist',
-      hot: true,
-    },
     optimization: {
       runtimeChunk: 'single',
       // https://webpack.docschina.org/guides/build-performance/#minimal-entry-chunk
