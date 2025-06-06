@@ -6,9 +6,9 @@ const yaml = require('yamljs');
 const json5 = require('json5');
 
 module.exports = (env) => {
-  console.log(`webpack env:`);
-  console.log(JSON.stringify(env, null, 2));
-  console.log('================\n');
+  // console.log(`webpack env:`);
+  // console.log(JSON.stringify(env, null, 2));
+  // console.log('================\n');
 
   return {
     mode: 'development',
@@ -24,7 +24,6 @@ module.exports = (env) => {
       clean: true,
       publicPath: './',
     },
-    devtool: 'inline-source-map',
     module: {
       rules: [
         // css
