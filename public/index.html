@@ -5,6 +5,12 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+    <section>
+      <span
+        >HtmlWebpackPlugin 自定义字段。custom_key： <%=
+        htmlWebpackPlugin.options.custom_key %></span
+      >
+    </section>
     <div id="app"></div>
     <!-- Webpack 会自动注入 <script> 这里 -->
   </body>

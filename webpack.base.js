@@ -88,6 +88,11 @@ module.exports = (env) => {
         template: './public/index.html', // 你的模板 HTML 路径
         title: 'webpack playground',
         inject: 'body', // 或直接删掉，让它默认插入到 <body>
+        meta: {
+          viewport:
+            'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no',
+        },
+        custom_key: 'this is a custom value',
       }),
       new CopyWebpackPlugin({
         patterns: [
