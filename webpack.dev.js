@@ -3,6 +3,7 @@ const path = require('path');
 const webpack = require('webpack');
 const { codeInspectorPlugin } = require('code-inspector-plugin');
 const baseConfig = require('./webpack.base');
+const { customStringify } = require('./tools/stringify');
 
 const { merge } = require('webpack-merge');
 
@@ -41,7 +42,7 @@ module.exports = (env) => {
 
   fs.writeFileSync(
     path.resolve(__dirname, '.dev.config.json'),
-    JSON.stringify(config, null, 2)
+    customStringify(config)
   );
 
   return config;
