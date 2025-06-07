@@ -7,7 +7,7 @@
       // 如果你不想引入 polyfill，只做语法转换，去掉 useBuiltIns 和 corejs 即可。
       {
         "useBuiltIns": "usage",
-        "corejs": "3",
+        "corejs": 3, // 2 表示使用 core-js@2，3 表示使用 core-js@3
         "modules": false,
         "debug": false
       }

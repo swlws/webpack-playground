@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const { codeInspectorPlugin } = require('code-inspector-plugin');
 const baseConfig = require('./webpack.base');
 
 const { merge } = require('webpack-merge');
@@ -16,6 +17,10 @@ module.exports = (env) => {
         // 所以，我们假想如下，无论 join 方法在何处调用，我们都只会获取到 lodash 中提供的 join 方法。
         join: ['lodash', 'join'],
       }),
+      // 代码定位插件
+      // codeInspectorPlugin({
+      //   bundler: 'webpack',
+      // }),
     ],
     devServer: {
       static: './dist',
