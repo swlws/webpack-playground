@@ -6,3 +6,5 @@ dist
 
 .dev.config.json
 .prod.config.json
+
+stats.json
