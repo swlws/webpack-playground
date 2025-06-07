@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const toml = require('toml');
 const yaml = require('yamljs');
@@ -87,6 +88,17 @@ module.exports = (env) => {
         template: './public/index.html', // 你的模板 HTML 路径
         title: 'webpack playground',
         inject: 'body', // 或直接删掉，让它默认插入到 <body>
+      }),
+      new CopyWebpackPlugin({
+        patterns: [
+          {
+            from: path.resolve(__dirname, 'public'),
+            to: path.resolve(__dirname, 'dist'),
+            globOptions: {
+              ignore: ['**/index.html'], // ⚠️ 忽略 index.html，因为 HtmlWebpackPlugin 会单独处理
+            },
+          },
+        ],
       }),
       // new BundleAnalyzerPlugin(),
     ],
