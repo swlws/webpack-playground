@@ -73,11 +73,13 @@ module.exports = (env) => {
           },
         },
         // babel-loader
-        // {
-        //   test: /\.js$/,
-        //   include: path.resolve(__dirname, 'src'),
-        //   loader: 'babel-loader',
-        // },
+        {
+          test: /\.(js|jsx)$/, // 如果支持 jsx
+          exclude: /node_modules/,
+          use: {
+            loader: 'babel-loader',
+          },
+        },
       ],
     },
     plugins: [

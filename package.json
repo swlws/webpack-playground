@@ -17,6 +17,9 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@babel/core": "^7.27.4",
+    "@babel/preset-env": "^7.27.2",
+    "babel-loader": "^10.0.0",
     "browserslist": "^4.25.0",
     "css-loader": "^7.1.2",
     "csv-loader": "^3.0.5",
@@ -32,6 +35,8 @@
     "yamljs": "^0.3.0"
   },
   "dependencies": {
-    "lodash": "^4.17.21"
+    "core-js": "^3.42.0",
+    "lodash": "^4.17.21",
+    "regenerator-runtime": "^0.14.1"
   }
 }

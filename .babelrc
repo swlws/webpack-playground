@@ -1,0 +1,16 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      // "targets": { ie: "11" } 表示目标是兼容 IE11，也就意味着 Babel 会把语法转换到 ES5。
+      // useBuiltIns: "usage" + corejs: 3 让 Babel 自动按需引入 polyfill，避免打/包太大。
+      // 如果你不想引入 polyfill，只做语法转换，去掉 useBuiltIns 和 corejs 即可。
+      {
+        "useBuiltIns": "usage",
+        "corejs": "3",
+        "modules": false,
+        "debug": false
+      }
+    ]
+  ]
+}
