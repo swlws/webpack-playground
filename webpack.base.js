@@ -84,7 +84,9 @@ module.exports = (env) => {
     },
     plugins: [
       new HtmlWebpackPlugin({
+        template: './public/index.html', // 你的模板 HTML 路径
         title: 'webpack playground',
+        inject: 'body', // 或直接删掉，让它默认插入到 <body>
       }),
       // new BundleAnalyzerPlugin(),
     ],

@@ -1,3 +1,5 @@
+const fs = require('fs');
+const path = require('path');
 const webpack = require('webpack');
 const { codeInspectorPlugin } = require('code-inspector-plugin');
 const baseConfig = require('./webpack.base');
@@ -5,9 +7,13 @@ const baseConfig = require('./webpack.base');
 const { merge } = require('webpack-merge');
 
 module.exports = (env) => {
-  return merge(baseConfig(env), {
+  const config = merge(baseConfig(env), {
     mode: 'development',
     devtool: 'source-map',
+    output: {
+      // devServer 模式时，这里必须为 /  ，否则会报 Cannot GET /index.html
+      publicPath: '/',
+    },
     plugins: [
       // 全局模块，不再需要 import 引入
       new webpack.ProvidePlugin({
@@ -23,8 +29,20 @@ module.exports = (env) => {
       // }),
     ],
     devServer: {
-      static: './dist',
+      static: {
+        directory: path.join(__dirname, 'public'),
+      },
       hot: true,
+      open: true,
+      watchFiles: ['src/**/*'],
+      historyApiFallback: true,
     },
   });
+
+  fs.writeFileSync(
+    path.resolve(__dirname, '.dev.config.json'),
+    JSON.stringify(config, null, 2)
+  );
+
+  return config;
 };

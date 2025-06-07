@@ -3,3 +3,4 @@ dist
 .DS_Store
 .env
 .env.local
+.dev.config.json
