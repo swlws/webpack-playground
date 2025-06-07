@@ -21,6 +21,7 @@
     "@babel/preset-env": "^7.27.2",
     "babel-loader": "^10.0.0",
     "browserslist": "^4.25.0",
+    "chokidar": "^4.0.3",
     "code-inspector-plugin": "^0.20.12",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",

@@ -24,3 +24,6 @@ function main() {
 
   logCsvData();
 }
+
+fetch('/api/mock/user');
+fetch('/api/mock/login');

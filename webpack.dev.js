@@ -4,6 +4,7 @@ const webpack = require('webpack');
 const { codeInspectorPlugin } = require('code-inspector-plugin');
 const baseConfig = require('./webpack.base');
 const { customStringify } = require('./tools/stringify');
+const mockMiddleware = require('./mock/index.js');
 
 const { merge } = require('webpack-merge');
 
@@ -37,6 +38,14 @@ module.exports = (env) => {
       open: true,
       watchFiles: ['src/**/*'],
       historyApiFallback: true,
+      setupMiddlewares: (middlewares, devServer) => {
+        if (!devServer) {
+          throw new Error('webpack-dev-server is not defined');
+        }
+
+        devServer.app.use(mockMiddleware);
+        return middlewares;
+      },
     },
   });
 
