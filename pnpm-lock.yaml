@@ -49,6 +49,9 @@ devDependencies:
   json5:
     specifier: ^2.2.3
     version: 2.2.3
+  mini-css-extract-plugin:
+    specifier: ^2.9.2
+    version: 2.9.2(webpack@5.99.9)
   style-loader:
     specifier: ^4.0.0
     version: 4.0.0(webpack@5.99.9)
@@ -2963,6 +2966,17 @@ packages:
     resolution: {integrity: sha512-x0Vn8spI+wuJ1O6S7gnbaQg8Pxh4NNHb7KSINmEWKiPE4RKOplvijn+NkmYmmRgP68mc70j2EbeTFRsrswaQeg==}
     engines: {node: '>=4'}
     hasBin: true
+    dev: true
+
+  /mini-css-extract-plugin@2.9.2(webpack@5.99.9):
+    resolution: {integrity: sha512-GJuACcS//jtq4kCtd5ii/M0SZf7OZRH+BxdqXZHaJfb8TJiVl+NgQRPwiYt2EuqeSkNydn/7vP+bcE27C5mb9w==}
+    engines: {node: '>= 12.13.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      schema-utils: 4.3.2
+      tapable: 2.2.2
+      webpack: 5.99.9(webpack-cli@6.0.1)
     dev: true
 
   /minimalistic-assert@1.0.1:

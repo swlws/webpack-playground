@@ -6,6 +6,9 @@ const { customStringify } = require('./tools/stringify');
 const { merge } = require('webpack-merge');
 
 module.exports = (env) => {
+  // 设置 env.prod 为 true，表示当前是生产模式
+  env.prod = true;
+
   const config = merge(baseConfig(env), {
     mode: 'production',
     output: {
