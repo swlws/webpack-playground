@@ -4,11 +4,40 @@ const webpack = require('webpack');
 const { codeInspectorPlugin } = require('code-inspector-plugin');
 const baseConfig = require('./webpack.base');
 const { customStringify } = require('./tools/stringify');
-const mockMiddleware = require('./mock/index.js');
 
 const { merge } = require('webpack-merge');
 
+const pwd = path.resolve(__dirname);
+
+function getDevServerConfig(env) {
+  if (!env || !env.proxy) return undefined;
+
+  const mockMiddleware = require(path.resolve(pwd, './mock/index.js'));
+  const devServer = {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    hot: true,
+    open: true,
+    watchFiles: ['src/**/*'],
+    historyApiFallback: true,
+    setupMiddlewares: (middlewares, devServer) => {
+      if (!devServer) {
+        throw new Error('webpack-dev-server is not defined');
+      }
+
+      devServer.app.use(mockMiddleware);
+      return middlewares;
+    },
+  };
+
+  return devServer;
+}
+
 module.exports = (env) => {
+  // dev server 配置
+  const devServer = getDevServerConfig(env);
+
   const config = merge(baseConfig(env), {
     mode: 'development',
     devtool: 'source-map',
@@ -30,23 +59,8 @@ module.exports = (env) => {
       //   bundler: 'webpack',
       // }),
     ],
-    devServer: {
-      static: {
-        directory: path.join(__dirname, 'public'),
-      },
-      hot: true,
-      open: true,
-      watchFiles: ['src/**/*'],
-      historyApiFallback: true,
-      setupMiddlewares: (middlewares, devServer) => {
-        if (!devServer) {
-          throw new Error('webpack-dev-server is not defined');
-        }
-
-        devServer.app.use(mockMiddleware);
-        return middlewares;
-      },
-    },
+    // dev server 配置
+    devServer,
   });
 
   fs.writeFileSync(
