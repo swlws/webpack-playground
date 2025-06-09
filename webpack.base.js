@@ -24,6 +24,7 @@ module.exports = (env) => {
       path: path.resolve(__dirname, 'dist'),
       clean: true,
       publicPath: './',
+      assetModuleFilename: 'images/[name][ext][query]', // 资源文件输出目录
     },
     module: {
       rules: [
