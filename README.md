@@ -7,3 +7,7 @@ webpack playground
 - babel 编译. 语法转换；polyfill 填充
 - worker
 - Http Mock
+
+package exports
+
+- <https://webpack.docschina.org/guides/package-exports/>
