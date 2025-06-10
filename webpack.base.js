@@ -12,7 +12,8 @@ module.exports = (env) => {
   // console.log(JSON.stringify(env, null, 2));
   // console.log('================\n');
 
-  console.log(env);
+  console.log('Webpack Env:', env);
+  console.log();
 
   return {
     mode: 'development',
