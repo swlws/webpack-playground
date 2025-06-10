@@ -85,9 +85,31 @@ module.exports = (env) => {
         {
           test: /\.(js|jsx)$/, // 如果支持 jsx
           exclude: /node_modules/,
-          use: {
-            loader: 'babel-loader',
-          },
+          use: [
+            // 自定义的日志 loader
+            {
+              loader: 'babel-loader',
+            },
+          ],
+        },
+        // md-loader
+        {
+          test: /\.md$/,
+          exclude: /node_modules/,
+          use: [
+            {
+              loader: path.resolve(__dirname, 'webpack/loaders/md-loader.js'),
+              options: {
+                // 可以传递 marked 的配置选项
+                breaks: true, // 转换换行符为 <br>
+                // 自定义高亮函数
+                highlight: (code, lang) => {
+                  // 这里可以使用 highlight.js 或其他高亮库
+                  return require('highlight.js').highlightAuto(code).value;
+                },
+              },
+            },
+          ],
         },
       ],
     },

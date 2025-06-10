@@ -8,6 +8,7 @@
 import { helloWorld } from './business/hello-world/index.js';
 import { logCsvData } from './business/load-csv/index.js';
 import './business/worker/index.js';
+import readMeDom from '../README.md';
 
 import './list-all-code-file.js';
 
@@ -20,9 +21,17 @@ console.log(
 main();
 
 function main() {
+  showReadMe();
+
   helloWorld();
 
   logCsvData();
+}
+
+function showReadMe() {
+  const ele = document.createElement('article');
+  ele.innerHTML = readMeDom;
+  document.body.appendChild(ele);
 }
 
 fetch('/api/mock/user');
