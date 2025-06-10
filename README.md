@@ -28,3 +28,19 @@ webpack-bundle-analyzer stats.json
 ```bash
 webpack --analyze --config webpack.prod.js
 ```
+
+## Node.js 进程参数
+
+```bash
+NODE_OPTIONS="--max-old-space-size=4096" webpack
+```
+
+## 包别名
+
+```json
+{
+  "webpack": "^4.0.0",
+  "webpack-5": "npm:webpack@^5.32.0",
+  "webpack-cli": "^4.5.0"
+}
+```
