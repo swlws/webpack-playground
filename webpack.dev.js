@@ -34,7 +34,7 @@ function getDevServerConfig(env) {
   return devServer;
 }
 
-module.exports = (env) => {
+module.exports = (env = {}) => {
   // 设置 env.dev 为 true，表示当前是开发模式
   env.dev = true;
 
