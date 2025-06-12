@@ -1,3 +1,18 @@
+import txt from '../../data/data.txt';
+import csv from '../../data/data.csv';
+import json5 from '../../data/data.json5';
+import yaml from '../../data/data.yaml';
+import toml from '../../data/data.toml';
+
+console.log('txt data:\n', txt);
+console.log('csv data:', csv);
+console.log('json5 data:', json5);
+console.log('yaml data:', yaml);
+console.log('toml data:', toml);
+
+/**
+ * 打印 csv 数据
+ */
 export function logCsvData() {
   import(/* webpackChunkName: 'data_csv' */ '../../data/data.csv').then(
     (module) => {

@@ -82,6 +82,11 @@ module.exports = (env) => {
             parse: json5.parse,
           },
         },
+        // text 文件
+        {
+          test: /\.txt$/i,
+          type: 'asset/source',
+        },
         // babel-loader
         {
           test: /\.(js|jsx)$/, // 如果支持 jsx
