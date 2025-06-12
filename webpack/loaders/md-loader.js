@@ -1,7 +1,10 @@
 const marked = require('marked');
+const { logYellow } = require('../../tools/log-color.js');
 const loaderUtils = require('loader-utils');
 
 module.exports = function (source) {
+  logYellow('【md-loader】开始处理 Markdown 文件');
+
   // 获取 loader 配置选项
   // const options = loaderUtils.getOptions(this) || {};
   // 获取 loader 配置选项 - Webpack 5 方式
