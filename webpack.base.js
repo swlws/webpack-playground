@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const LifecyclePlugin = require('./webpack/plugins/lifecycle-plugin/index.js');
 const toml = require('toml');
 const yaml = require('yamljs');
 const json5 = require('json5');
@@ -138,6 +139,8 @@ module.exports = (env) => {
       new MiniCssExtractPlugin({
         filename: '[name].css',
       }),
+      // 自定义生命周期插件
+      new LifecyclePlugin(),
       // new BundleAnalyzerPlugin(),
     ],
     optimization: {
