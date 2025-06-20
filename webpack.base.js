@@ -7,6 +7,7 @@ const LifecyclePlugin = require('./webpack/plugins/lifecycle-plugin/index.js');
 const toml = require('toml');
 const yaml = require('yamljs');
 const json5 = require('json5');
+const { options } = require('marked');
 
 module.exports = (env) => {
   // console.log(`webpack env:`);
@@ -90,7 +91,7 @@ module.exports = (env) => {
         // babel-loader
         {
           test: /\.(js|jsx)$/, // 如果支持 jsx
-          exclude: /node_modules/,
+          exclude: /node_modules|build.js/,
           use: [
             // 自定义的日志 loader
             {
@@ -113,6 +114,17 @@ module.exports = (env) => {
                   // 这里可以使用 highlight.js 或其他高亮库
                   return require('highlight.js').highlightAuto(code).value;
                 },
+              },
+            },
+          ],
+        },
+        {
+          test: /build.js$/, // 匹配 jQuery 的路径
+          use: [
+            {
+              loader: 'val-loader',
+              options: {
+                date: new Date().toLocaleString(), // 传递当前日期作为参数
               },
             },
           ],

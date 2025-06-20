@@ -64,6 +64,12 @@ devDependencies:
   toml:
     specifier: ^3.0.0
     version: 3.0.0
+  val-loader:
+    specifier: ^6.0.0
+    version: 6.0.0(webpack@5.99.9)
+  var-loader:
+    specifier: ^1.0.3
+    version: 1.0.3
   webpack:
     specifier: ^5.99.9
     version: 5.99.9(webpack-cli@6.0.1)
@@ -2843,6 +2849,13 @@ packages:
     resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
     dev: true
 
+  /json5@1.0.2:
+    resolution: {integrity: sha512-g1MWMLBiz8FKi1e4w0UyVL3w+iJceWAFBAaBnnGKOpNa5f8TLktkbre1+s6oICydWAm+HRUGTmI+//xv2hvXYA==}
+    hasBin: true
+    dependencies:
+      minimist: 1.2.8
+    dev: true
+
   /json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
@@ -2871,6 +2884,15 @@ packages:
   /loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
     engines: {node: '>=6.11.5'}
+    dev: true
+
+  /loader-utils@1.4.2:
+    resolution: {integrity: sha512-I5d00Pd/jwMD2QCduo657+YM/6L3KZu++pmX9VFncxaxvHcru9jx1lBaFft+r4Mt2jK0Yhp41XlRAihzPxHNCg==}
+    engines: {node: '>=4.0.0'}
+    dependencies:
+      big.js: 5.2.2
+      emojis-list: 3.0.0
+      json5: 1.0.2
     dev: true
 
   /loader-utils@2.0.4:
@@ -3004,6 +3026,10 @@ packages:
     resolution: {integrity: sha512-J7p63hRiAjw1NDEww1W7i37+ByIrOWO5XQQAzZ3VOcL0PNybwpfmV/N05zFAzwQ9USyEcX6t3UO+K5aqBQOIHw==}
     dependencies:
       brace-expansion: 1.1.11
+    dev: true
+
+  /minimist@1.2.8:
+    resolution: {integrity: sha512-2yyAR8qBkN3YuheJanUpWC5U3bb5osDywNB8RzDVlDwDHbocAJveqqj1u8+SVD7jkWT4yvsHCpWqqWqAxb0zCA==}
     dev: true
 
   /mrmime@2.0.1:
@@ -3932,6 +3958,21 @@ packages:
   /uuid@8.3.2:
     resolution: {integrity: sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==}
     hasBin: true
+    dev: true
+
+  /val-loader@6.0.0(webpack@5.99.9):
+    resolution: {integrity: sha512-NHi81ow+/mVBRuFRNxp8tfTSnAIFsq/wzZGqxv/a82Y722GQSOQi9yP0GuenSBiuw4+zGjmW/H9sLTbP3bewrw==}
+    engines: {node: '>= 18.12.0'}
+    peerDependencies:
+      webpack: ^5.0.0
+    dependencies:
+      webpack: 5.99.9(webpack-cli@6.0.1)
+    dev: true
+
+  /var-loader@1.0.3:
+    resolution: {integrity: sha512-kT9+/WUrTbV5txT3FbVribASCuksv7nTLwLdijA92teSqVWc5QKoDia6f4CqgNhtmQ6wtf1uulU5Jat4pLYMsQ==}
+    dependencies:
+      loader-utils: 1.4.2
     dev: true
 
   /vary@1.1.2:

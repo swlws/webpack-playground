@@ -5,12 +5,18 @@
  */
 // import 'regenerator-runtime/runtime';
 
+import buildTime from './build.js';
 import { helloWorld } from './business/hello-world/index.js';
 import { logCsvData } from './business/load-csv/index.js';
 import './business/worker/index.js';
 import readMeDom from '../README.md';
 
 import './list-all-code-file.js';
+
+console.log(
+  `%c【val-loader】构建时间: ${buildTime}`,
+  'color: orange;font-weight: bold;'
+);
 
 console.log(
   '%c使用 webpack.ProvidePlugin 全局引入的 lodash 模块：\n%c输入 _ 即可使用lodash模块',
