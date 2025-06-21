@@ -61,6 +61,12 @@ module.exports = (env = {}) => {
       // codeInspectorPlugin({
       //   bundler: 'webpack',
       // }),
+      // 编译时，替换变量的值，类似与 val-loader
+      // https://webpack.docschina.org/plugins/define-plugin/
+      // 注意：这里的 __env__ 必须使用双引号，否则会被 webpack 解析为变量
+      new webpack.DefinePlugin({
+        __env__: '"development"',
+      }),
     ],
     // dev server 配置
     devServer,

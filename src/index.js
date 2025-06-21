@@ -42,3 +42,7 @@ function showReadMe() {
 
 fetch('/api/mock/user');
 fetch('/api/mock/login');
+
+if (__env__ === 'development') {
+  console.log('开发环境', __env__);
+}
