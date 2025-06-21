@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
@@ -7,7 +8,6 @@ const LifecyclePlugin = require('./webpack/plugins/lifecycle-plugin/index.js');
 const toml = require('toml');
 const yaml = require('yamljs');
 const json5 = require('json5');
-const { options } = require('marked');
 
 module.exports = (env) => {
   // console.log(`webpack env:`);
@@ -132,6 +132,11 @@ module.exports = (env) => {
       ],
     },
     plugins: [
+      // 字符串
+      new webpack.BannerPlugin({
+        banner: 'this is a banner by webpack.',
+      }),
+
       new HtmlWebpackPlugin({
         template: './public/index.html', // 你的模板 HTML 路径
         title: 'webpack playground',

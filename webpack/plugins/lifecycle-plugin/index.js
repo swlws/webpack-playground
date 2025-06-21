@@ -3,6 +3,7 @@ const { logYellow, logGreen } = require('../../../tools/log-color.js');
 
 const BANNER_JS = `/**
  * @description: 这是一个自动生成的文件头注释
+ * @from: 自定义插件 - webpack/plugins/lifecycle-plugin/index.js
  */`;
 
 class LifecyclePlugin {
