@@ -136,6 +136,10 @@ module.exports = (env) => {
       new webpack.BannerPlugin({
         banner: 'this is a banner by webpack.',
       }),
+      //
+      new webpack.DefinePlugin({
+        define_build_time: JSON.stringify(new Date().toLocaleString()),
+      }),
 
       new HtmlWebpackPlugin({
         template: './public/index.html', // 你的模板 HTML 路径

@@ -18,6 +18,8 @@ console.log(
   'color: orange;font-weight: bold;'
 );
 
+console.log('define_build_time', define_build_time);
+
 console.log(
   '%c使用 webpack.ProvidePlugin 全局引入的 lodash 模块：\n%c输入 _ 即可使用lodash模块',
   'color: red;font-weight: bold;',
